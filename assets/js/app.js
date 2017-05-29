@@ -57,9 +57,7 @@
  };
 
 function load (e) {
-
-	var file=e.target.files;
-	publicPost.innerHTML=" "; 
+	var mypicture = files[0];
 	if(!mypicture.type.match(/image/)){
 		alert("selecciona una imagen")
 	} else {
@@ -76,12 +74,56 @@ function postPicture(e){
 	closeModal()
 };
 
+function postEvent(){
+ 	var titleEvent = document.getElementById('eventTitle');
+ 	var date = document.getElementById("eventDate");
+ 	var newDiv =document.createElement('div');
+ 	var newTitleEvent = document.createElement("h3");
+ 	var nodeTitle = document.createTextNode(titleEvent.value);
+ 	var newEvent = document.createElement('p');
+ 	var nodeEvent = document.createTextNode(date.value);
+ 	var ubication = document.getElementById("ubication");
+ 	var nodeUbication = document.createTextNode(ubication.value);
+ 	var newUbication=document.createElement('p');
+ 	newUbication.appendChild(nodeUbication);
+ 	newEvent.appendChild(nodeEvent);
+ 	newTitleEvent.appendChild(nodeTitle);
+ 	newDiv.appendChild(newTitleEvent);
+ 	newDiv.appendChild(newEvent);
+ 	newDiv.appendChild(newUbication);
+ 	publicPost.appendChild(newDiv);
+ 	newDiv.classList.add('card-panel', 'hoverable');
+ 	newDiv.draggable=true;
+ 	titleEvent.value= " ";
+ 	date.value=" ";
+ 	var newMAp=document.createElement("div");
+ 	newMap.Id="mapa";
+ 	newDiv.appendChild(newMap);
+ 	function initMap(){
+    var mapaContenedor = document.getElementById("mapa");
+  	var coordenadas= ubication.value;
+ 
+  	var mapa = new google.maps.Map(mapaContenedor,{
+       zoom:8,
+        center: coordenadas
+      });
+    var marcador = new google.maps.Marker({
+      position: ubication.value,
+      map:mapa,
+      title: "My ubication",
+      draggable: true,
+ 	});
+ 	 var ubication = document.getElementById("ubication");
+ 	 new google.maps.places.Autocomplete(ubication);
+ 	};
+ };
+
 function closeModal(){
 	$('.modal').modal('close');
 };
 
  sendMessage.addEventListener("click", postMessage);
  sendImage.addEventListener("click", postPicture);
- sendEvent.addEventListener("click", prueba);
+ sendEvent.addEventListener("click", postEvent);
  sendMedia.addEventListener("click", prueba);
  file.addEventListener("change", load);
