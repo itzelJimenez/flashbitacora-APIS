@@ -30,6 +30,7 @@
  var sendEvent = document.getElementById('sendEvent');
  var sendMedia = document.getElementById('sendMedia'); 
  var publicPost = document.getElementById('publicPosts');
+ var file = document.getElementById("image-file");
 
  function prueba(){
  	alert("Los botones están bien enlazados");
@@ -53,15 +54,34 @@
  	titleMessage.value= " ";
  	message.value=" ";
  	closeModal();
-   
-
  };
 
+function load (e) {
+
+	var file=e.target.files;
+	publicPost.innerHTML=" "; 
+	if(!mypicture.type.match(/image/)){
+		alert("selecciona una imagen")
+	} else {
+		publicPost+="Nombre del archivo "+ mypicture.name + "<br>";
+		var reader = new FileReader();
+		reader.readAsDataURL(e.files[0]);
+		reader.addEventListener("load", postPicture);
+	}
+};
+
+function postPicture(e){
+	var resultado=e.target.result;
+	publicPost.innerHTML+="<img src='"+resultado+"'>";
+	closeModal()
+};
+
 function closeModal(){
-	$('#modalChat').modal('close');
-}
+	$('.modal').modal('close');
+};
 
  sendMessage.addEventListener("click", postMessage);
- sendImage.addEventListener("click", prueba);
+ sendImage.addEventListener("click", postPicture);
  sendEvent.addEventListener("click", prueba);
  sendMedia.addEventListener("click", prueba);
+ file.addEventListener("change", load);
