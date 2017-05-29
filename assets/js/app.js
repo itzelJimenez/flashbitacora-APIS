@@ -25,16 +25,43 @@
  	 new google.maps.places.Autocomplete(ubication);
  };
 
+ var sendMessage = document.getElementById('sendMessage');
+ var sendImage = document.getElementById('sendImage');
+ var sendEvent = document.getElementById('sendEvent');
+ var sendMedia = document.getElementById('sendMedia'); 
+ var publicPost = document.getElementById('publicPosts');
+
  function prueba(){
  	alert("Los botones están bien enlazados");
  }
 
- var sendMessage = document.getElementById('sendMessage');
- var sendImage = document.getElementById('sendImage');
- var sendEvent = document.getElementById('sendEvent');
- var sendMedia = document.getElementById('sendMedia'); 	
+ function postMessage(){
+ 	var titleMessage = document.getElementById('chatTitle');
+ 	var message = document.getElementById("chatMessage");
+ 	var newDiv =document.createElement('div');
+ 	var newTitleMessage = document.createElement("h3");
+ 	var nodeTitle = document.createTextNode(titleMessage.value);
+ 	var newMessage = document.createElement('p');
+ 	var nodeMessage = document.createTextNode(message.value);
+ 	newMessage.appendChild(nodeMessage);
+ 	newTitleMessage.appendChild(nodeTitle);
+ 	newDiv.appendChild(newTitleMessage);
+ 	newDiv.appendChild(newMessage);
+ 	publicPost.appendChild(newDiv);
+ 	newDiv.classList.add('card-panel', 'hoverable');
+ 	newDiv.draggable=true;
+ 	titleMessage.value= " ";
+ 	message.value=" ";
+ 	closeModal();
+   
 
- sendMessage.addEventListener("click", prueba);
+ };
+
+function closeModal(){
+	$('#modalChat').modal('close');
+}
+
+ sendMessage.addEventListener("click", postMessage);
  sendImage.addEventListener("click", prueba);
  sendEvent.addEventListener("click", prueba);
  sendMedia.addEventListener("click", prueba);
