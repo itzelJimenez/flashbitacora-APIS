@@ -96,26 +96,7 @@ function postEvent(){
  	newDiv.draggable=true;
  	titleEvent.value= " ";
  	date.value=" ";
- 	var newMAp=document.createElement("div");
- 	newMap.Id="mapa";
- 	newDiv.appendChild(newMap);
- 	function initMap(){
-    var mapaContenedor = document.getElementById("mapa");
-  	var coordenadas= ubication.value;
- 
-  	var mapa = new google.maps.Map(mapaContenedor,{
-       zoom:8,
-        center: coordenadas
-      });
-    var marcador = new google.maps.Marker({
-      position: ubication.value,
-      map:mapa,
-      title: "My ubication",
-      draggable: true,
- 	});
- 	 var ubication = document.getElementById("ubication");
- 	 new google.maps.places.Autocomplete(ubication);
- 	};
+ 	closeModal();
  };
 
 function closeModal(){
