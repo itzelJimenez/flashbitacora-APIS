@@ -29,11 +29,27 @@
 
           <div id="modalChat" class="modal">
             <div class="modal-content">
-              <h4>Prueba de Modal Chat</h4>
-              <p>A bunch of text</p>
+              <h4>Insert a Message</h4>
+              <div class="row">
+                <div class="col s12">
+                  <div class="input-field">
+                     <label for="title">Title</label>
+                    <input id="modal-chat-title" type="text" class="validate" data-length="10" />
+                  </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <div class="col s12">
+                   <div class="input-field">
+                     <label for="title">Message</label>
+                     <textarea id="modal-chat-message" class="materialize-textarea">
+                     </textarea>
+                   </div>
+                 </div>
+               </div>
             </div>
             <div class="modal-footer">
-                <button class="btn red accent-3 waves-effect waves-black" type="submit" name="action" data-publication="text">Publicar
+                <button class="btn red accent-3 waves-effect waves-black" type="submit" name="action" data-publication="text">Send
                 <i class="material-icons right">send</i>
                 </button>
             </div>
@@ -41,11 +57,31 @@
 
           <div id="modalImages" class="modal">
             <div class="modal-content">
-              <h4>Prueba de Modal Imágenes</h4>
-              <p>A bunch of text</p>
+              <h4>Insert a picture</h4>
+              <div class="row">
+                <div class="col s12">
+                  <div class="input-field">
+                    <label for="title">Title</label>
+                    <input id="modal-chat-title" type="text" class="validate" data-length="10" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col s12">
+                    <div class="file-field input-field">
+                      <div class="btn">
+                        <span>Picture</span>
+                        <input type="file" accept="image/*" id="image-file">
+                      </div>
+                      <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                      </div>
+                    </div>
+                  </div>
+              </div>
             </div>
             <div class="modal-footer">
-                <button class="btn blue darken-1 waves-effect waves-black" type="submit" name="action" data-publication="image">Publicar
+                <button class="btn blue darken-1 waves-effect waves-black" type="submit" name="action" data-publication="image">Send
                 <i class="material-icons right">send</i>
                 </button>
             </div>
@@ -53,11 +89,39 @@
 
           <div id="modalEvent" class="modal">
             <div class="modal-content">
-              <h4>Prueba de Modal Evento</h4>
-              <p>A bunch of text</p>
+              <h4>Event planner</h4>
+              <div class="row">
+                <div class="col s12">
+                  <div class="input-field">
+                    <label for="title">Event's name</label>
+                    <input id="modal-chat-title" type="text" class="validate" data-length="10" />
+                  </div>
+                 </div>
+              </div>
+              <div class="row">
+                <div class="col s6">
+                  <div class="input-field">
+                    <label>Date</label>
+                    <input type="date" class="datepicker" id="modal-event-date">
+                  </div>
+                 </div>
+                <div class="col s6">
+                    <div class="input-field">
+                      <label>Ubication</label>
+                      <input type="text" id="punto-partida"></input>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12">
+                <div id="map">
+
+                </div>
+              </div>
             </div>
             <div class="modal-footer">
-                <button class="btn green waves-effect waves-black" type="submit" name="action" data-publication="event">Publicar
+                <button class="btn green waves-effect waves-black" type="submit" name="action" data-publication="event">Send
                 <i class="material-icons right">send</i>
                 </button>
             </div>
@@ -65,11 +129,31 @@
 
           <div id="modalVideo" class="modal">
             <div class="modal-content">
-              <h4>Prueba de Modal Video</h4>
-              <p>A bunch of text</p>
+              <h4>Insert a video</h4>
+              <div class="row">
+                <div class="col s12">
+                  <div class="input-field">
+                    <label for="title">Title</label>
+                    <input id="modal-chat-title" type="text" class="validate" data-length="10" />
+                  </div>
+                 </div>
+              </div>
+                <div class="row">
+                  <div class="col s12">
+                    <div class="file-field input-field">
+                      <div class="btn">
+                        <span>Audio or video</span>
+                        <input type="file" accept="video/mp4,video/x-m4v,video/*, audio/mp3, audio/*" id="media-file">
+                      </div>
+                      <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                      </div>
+                    </div>
+                  </div>
+              </div>
             </div>
             <div class="modal-footer">
-                <button class="btn amber waves-effect waves-black" type="submit" name="action" data-publication="media">Publicar
+                <button class="btn amber waves-effect waves-black" type="submit" name="action" data-publication="media">Send
                 <i class="material-icons right">send</i>
                 </button>
             </div>
