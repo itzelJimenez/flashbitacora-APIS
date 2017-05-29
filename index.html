@@ -14,7 +14,9 @@
             <h1>Flash Bitácora</h1>
             <p class="flow-text">"Publish anything", just in you browser.</p>
         </header>
-        
+        <section id="publicPosts" class="container">
+          
+        </section>
         <div class="fixed-action-btn horizontal click-to-toggle">
             <a class="btn-floating btn-large pink waves-effect waves-black">
               <i class="large material-icons">mode_edit</i>
@@ -34,7 +36,7 @@
                 <div class="col s12">
                   <div class="input-field">
                      <label for="title">Title</label>
-                    <input id="modal-chat-title" type="text" class="validate" data-length="10" />
+                    <input id="chatTitle" type="text" class="validate" data-length="10" />
                   </div>
                  </div>
               </div>
@@ -42,18 +44,19 @@
                  <div class="col s12">
                    <div class="input-field">
                      <label for="title">Message</label>
-                     <textarea id="modal-chat-message" class="materialize-textarea">
+                     <textarea id="chatMessage" class="materialize-textarea">
                      </textarea>
                    </div>
                  </div>
                </div>
             </div>
             <div class="modal-footer">
-                <button class="btn red accent-3 waves-effect waves-black" type="submit" name="action" data-publication="text">Send
+                <button class="btn red accent-3 waves-effect waves-black" type="submit" name="action" id="sendMessage">Send
                 <i class="material-icons right">send</i>
                 </button>
             </div>
           </div>
+
 
           <div id="modalImages" class="modal">
             <div class="modal-content">
@@ -62,7 +65,7 @@
                 <div class="col s12">
                   <div class="input-field">
                     <label for="title">Title</label>
-                    <input id="modal-chat-title" type="text" class="validate" data-length="10" />
+                    <input id="imageTitle" type="text" class="validate" data-length="10" />
                   </div>
                 </div>
               </div>
@@ -81,11 +84,12 @@
               </div>
             </div>
             <div class="modal-footer">
-                <button class="btn blue darken-1 waves-effect waves-black" type="submit" name="action" data-publication="image">Send
+                <button class="btn blue darken-1 waves-effect waves-black" type="submit" name="action" id="sendImage">Send
                 <i class="material-icons right">send</i>
                 </button>
             </div>
           </div>
+
 
           <div id="modalEvent" class="modal">
             <div class="modal-content">
@@ -94,7 +98,7 @@
                 <div class="col s12">
                   <div class="input-field">
                     <label for="title">Event's name</label>
-                    <input id="modal-chat-title" type="text" class="validate" data-length="10" />
+                    <input id="eventTitle" type="text" class="validate" data-length="10" />
                   </div>
                  </div>
               </div>
@@ -102,13 +106,13 @@
                 <div class="col s6">
                   <div class="input-field">
                     <label>Date</label>
-                    <input type="date" class="datepicker" id="modal-event-date">
+                    <input type="date" class="datepicker" id="eventDate">
                   </div>
                  </div>
                 <div class="col s6">
-                    <div class="input-field">
+                    <div>
                       <label>Ubication</label>
-                      <input type="text" id="punto-partida"></input>
+                      <input type="text" id="ubication"></input>
                     </div>
                 </div>
               </div>
@@ -121,11 +125,12 @@
               </div>
             </div>
             <div class="modal-footer">
-                <button class="btn green waves-effect waves-black" type="submit" name="action" data-publication="event">Send
+                <button class="btn green waves-effect waves-black" type="submit" name="action" id="sendEvent">Send
                 <i class="material-icons right">send</i>
                 </button>
             </div>
           </div>
+
 
           <div id="modalVideo" class="modal">
             <div class="modal-content">
@@ -153,14 +158,19 @@
               </div>
             </div>
             <div class="modal-footer">
-                <button class="btn amber waves-effect waves-black" type="submit" name="action" data-publication="media">Send
+                <button class="btn amber waves-effect waves-black" type="submit" name="action" id="sendMedia">Send
                 <i class="material-icons right">send</i>
                 </button>
             </div>
           </div>
+
+
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="assets/js/materialize.min.js"></script>
         <script type="text/javascript" src="assets/js/app.js"></script>
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGqLTgaXdNU9LvxlLqrT5rQ2aN_UdHO2U&callback=initMap&libraries=places" type="text/javascript">
+        </script>
     </body>
 
 </html>
